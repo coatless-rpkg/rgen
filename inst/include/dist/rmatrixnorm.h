@@ -20,7 +20,9 @@
 //
 // There are two ways to proceed in this generation. The first is to obtain a cholesky decomposition and
 // the second is to use a symmetric eigen decomposition
-arma::mat rmatnormal_chol(const arma::mat& mu, const arma::mat& Sigma_row, const arma::mat& Sigma_col) {
+inline arma::mat rmatnormal_chol(const arma::mat& mu,
+                                 const arma::mat& Sigma_row,
+                                 const arma::mat& Sigma_col) {
 
     // Construct X by repeatively sampling from N(0,1)
     arma::mat X(Sigma_row.n_rows, Sigma_col.n_cols);
@@ -41,7 +43,9 @@ inline arma::mat make_mat(const arma::mat& X){
     return eigvec * diagmat(sqrt(eigval)) * eigvec.t();
 }
 
-arma::mat rmatnormal_eigen(const arma::mat& mu, const arma::mat& Sigma_row, const arma::mat& Sigma_col) {
+inline arma::mat rmatnormal_eigen(const arma::mat& mu,
+                                  const arma::mat& Sigma_row,
+                                  const arma::mat& Sigma_col) {
 
     // Construct X by repeatively sampling from N(0,1)
     arma::mat X(Sigma_row.n_rows, Sigma_col.n_cols);

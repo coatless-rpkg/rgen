@@ -9,7 +9,7 @@
 // @param ps A \code{vector} for the probability of each category.
 // @return A \code{vector} from a multinomial with probability ps.
 // @author Steven Andrew Culpepper
-double rmultinomial(const arma::vec& ps){
+inline double rmultinomial(const arma::vec& ps){
     unsigned int C = ps.n_elem;
     double u = R::runif(0,1);
     arma::vec cps = cumsum(ps);

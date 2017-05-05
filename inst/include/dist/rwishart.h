@@ -27,8 +27,7 @@
 // vR = apply(o, 1:2, var)
 // stopifnot(all.equal(vR, Va, tolerance = 1/16))
 //
-// [[Rcpp::export]]
-arma::mat rwishart(unsigned int df, const arma::mat& S){
+inline arma::mat rwishart(unsigned int df, const arma::mat& S){
     // Dimension of returned wishart
     unsigned int m = S.n_rows;
 

@@ -9,7 +9,7 @@
 // @param deltas A \code{vector} of Dirichlet parameters.
 // @return A \code{vector} from a Dirichlet.
 // @author Steven Andrew Culpepper
-arma::vec rDirichlet(const arma::vec& deltas){
+inline arma::vec rdirichlet(const arma::vec& deltas){
     size_t C = deltas.n_elem;
     arma::vec Xgamma(C);
 

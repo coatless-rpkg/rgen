@@ -14,7 +14,7 @@
 // @examples
 // #Call with the following data:
 // rmvnorm(2, c(0,0), diag(2))
-arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S){
+inline arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S){
     unsigned int ncols = S.n_cols;
     arma::mat Y(n, ncols);
     Y.imbue( norm_rand ) ;

@@ -2,7 +2,7 @@
 #define RGEN_RIWISHART_H
 
 #include <RcppArmadillo.h>
-#include <rwishart.h>
+#include <dist/rwishart.h>
 
 // @title Generate Random Inverse Wishart Distribution
 // @description Creates a random inverse wishart distribution when given degrees of freedom and a sigma matrix.
@@ -14,8 +14,7 @@
 // @examples
 // #Call with the following data:
 // riwishart(3, diag(2))
-// [[Rcpp::export]]
-arma::mat riwishart(unsigned int df, const arma::mat& S){
+inline arma::mat riwishart(unsigned int df, const arma::mat& S){
     return rwishart(df, S.i()).i();
 }
 
