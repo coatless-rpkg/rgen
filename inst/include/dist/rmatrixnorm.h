@@ -3,6 +3,8 @@
 
 #include <RcppArmadillo.h>
 
+namespace rgen {
+
 inline arma::mat rmatnormal_chol(const arma::mat& mu,
                                  const arma::mat& Sigma_row,
                                  const arma::mat& Sigma_col) {
@@ -76,6 +78,7 @@ inline arma::mat rmatnormal(const arma::mat& mu,
     return rmatnormal_eigen(mu, Sigma_row, Sigma_col);
 }
 
+} // rgen
 
 /*
 # N == P

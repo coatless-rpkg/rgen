@@ -4,6 +4,8 @@
 #include <RcppArmadillo.h>
 #include <dist/rwishart.h>
 
+namespace rgen {
+
 /**
  * Generate Random Inverse Wishart Distribution
  *
@@ -25,5 +27,7 @@
 inline arma::mat riwishart(unsigned int df, const arma::mat& S){
     return rwishart(df, S.i()).i();
 }
+
+} // rgen
 
 #endif

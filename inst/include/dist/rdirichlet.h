@@ -3,6 +3,8 @@
 
 #include <RcppArmadillo.h>
 
+namespace rgen {
+
 /**
  * Generate Dirichlet Random Variable
  *
@@ -23,5 +25,7 @@ inline arma::vec rdirichlet(const arma::vec& deltas){
 
     return Xgamma/sum(Xgamma);
 }
+
+} // rgen
 
 #endif

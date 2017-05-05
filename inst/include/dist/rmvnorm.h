@@ -3,6 +3,8 @@
 
 #include <RcppArmadillo.h>
 
+namespace rgen {
+
 /**
  * Generate Random Multivariate Normal Distribution
  *
@@ -27,5 +29,7 @@ inline arma::mat rmvnorm(unsigned int n, const arma::vec& mu, const arma::mat& S
     Y.imbue( norm_rand ) ;
     return arma::repmat(mu, 1, n).t() + Y * arma::chol(S);
 }
+
+} // rgen
 
 #endif

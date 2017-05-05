@@ -3,6 +3,8 @@
 
 #include <RcppArmadillo.h>
 
+namespace rgen {
+
 /**
  * Generate Random Wishart Distribution
  *
@@ -49,5 +51,7 @@ inline arma::mat rwishart(unsigned int df, const arma::mat& S){
     // Return random wishart
     return C.t()*C;
 }
+
+} // rgen
 
 #endif

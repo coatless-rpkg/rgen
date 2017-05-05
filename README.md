@@ -71,8 +71,8 @@ For example, the following would allow for you to sample from an inverse wishart
 
 // Surface the riwishart function in the rgen package into R.
 // [[Rcpp::export]]
-arma::mat riwishart_cpp_ex(unsigned int df, const arma::mat& S) {
-    return riwishart(df, S);
+arma::mat riwishart(unsigned int df, const arma::mat& S) {
+    return rgen::riwishart(df, S);
 }
 
 /*** R
@@ -80,7 +80,7 @@ arma::mat riwishart_cpp_ex(unsigned int df, const arma::mat& S) {
 set.seed(111)
 
 # Call the C++ function from R
-riwishart_cpp_ex(3, diag(2))
+riwishart(3, diag(2))
 */
 ```
 

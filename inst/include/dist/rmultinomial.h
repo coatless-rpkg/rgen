@@ -3,6 +3,8 @@
 
 #include <RcppArmadillo.h>
 
+namespace rgen {
+
 /**
  * Generate Multinomial Random Variable
  *
@@ -22,5 +24,7 @@ inline double rmultinomial(const arma::vec& ps){
 
     return sum(Ips);
 }
+
+} // rgen
 
 #endif
