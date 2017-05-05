@@ -3,23 +3,6 @@
 
 #include <RcppArmadillo.h>
 
-// @title Sample From Matrix Normal Distribution
-// @description Provides the ability to draw one sample from a Matrix Normal Distribution
-// @param mu        A \code{matrix} with dimensions \eqn{N \times P}{N x P} that contains the mean of the Matrix Normal Distribution
-// @param Sigma_row A \code{matrix} with dimensions \eqn{N \times N}{N x N} that contains the row covariance matrix (positive definite) of the Matrix Normal Distribution
-// @param Sigma_col A \code{matrix} with dimensions \eqn{P \times P}{P x P} that contains the column covariance matrix (positive definite) of the Matrix Normal Distribution
-// @rdname rmatnormal
-// @export
-// @details
-// The implementation is based off of the notation that
-// \deqn{X \sim MN_{N\times P}\left({0,I,I}\right)}{X ~ MN[NxP](0,I,I)}
-// Then,
-// \deqn{Y = M + AXB}
-// so that:
-// \deqn{Y \sim MN_{N\times P}\left({M,U=AA^{T},V=B^{T}B}\right)}{Y ~ MN[NxP](M,U=AA^T,V=B^{T}B)}
-//
-// There are two ways to proceed in this generation. The first is to obtain a cholesky decomposition and
-// the second is to use a symmetric eigen decomposition
 inline arma::mat rmatnormal_chol(const arma::mat& mu,
                                  const arma::mat& Sigma_row,
                                  const arma::mat& Sigma_col) {
@@ -55,6 +38,32 @@ inline arma::mat rmatnormal_eigen(const arma::mat& mu,
     return mu + make_mat(Sigma_row) * X * make_mat(Sigma_col);
 }
 
+/**
+ * Sample From Matrix Normal Distribution
+ *
+ * Provides the ability to draw one sample from a Matrix Normal Distribution
+ * @param mu        The mean of the Matrix Normal Distribution
+ *                  with dimensions @f$N \times P@f$.
+ * @param Sigma_row The row covariance matrix (positive definite) of
+ *                  the Matrix Normal Distribution with dimensions
+ *                  @f$N \times N@f$.
+ * @param Sigma_col The column covariance matrix (positive definite) of
+ *                  the Matrix Normal Distribution with dimensions
+ *                  @f$P \times P@f$.
+ * @param method    The desired method of either a cholesky ("chol") or eigen
+ *                  ("eigen") sampling scheme. Default is to use "chol".
+ * @details
+ * The implementation is based off of the notation that
+ * @f[X \sim MN_{N\times P}\left({0,I,I}\right) @f]
+ * Then,
+ * @f[Y = M + AXB@f]
+ * so that:
+ * @f[Y \sim MN_{N\times P}\left({M,U=AA^{T},V=B^{T}B}\right)@f]
+ *
+ * There are two ways to proceed in this generation. The first is to obtain a
+ * cholesky decomposition and the second is to use a symmetric eigen
+ * decomposition
+ */
 inline arma::rmatnormal(const arma::mat& mu,
                         const arma::mat& Sigma_row,
                         const arma::mat& Sigma_col,

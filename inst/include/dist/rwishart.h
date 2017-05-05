@@ -3,30 +3,24 @@
 
 #include <RcppArmadillo.h>
 
-// @title Generate Random Wishart Distribution
-// @description Creates a random wishart distribution when given degrees of freedom and a sigma matrix.
-// @param df An \code{int}, which gives the degrees of freedom of the Wishart.  (> 0)
-// @param S A \code{matrix} with dimensions m x m that provides Sigma, the covariance matrix.
-// @return A \code{matrix} that is a Wishart distribution, aka the sample covariance matrix of a Multivariate Normal Distribution
-// @seealso \code{\link{riwishart}}
-// @author James J Balamuta
-// @examples
-// #Call with the following data:
-// rwishart(3, diag(2))
-//
-// # Validation
-// set.seed(1337)
-// S = toeplitz((10:1)/10)
-// n = 10000
-// o = array(dim = c(10,10,n))
-// for(i in 1:n){
-// o[,,i] = rwishart(20, S)
-// }
-// mR = apply(o, 1:2, mean)
-// Va = 20*(S^2 + tcrossprod(diag(S)))
-// vR = apply(o, 1:2, var)
-// stopifnot(all.equal(vR, Va, tolerance = 1/16))
-//
+/**
+ * Generate Random Wishart Distribution
+ *
+ * Creates a random wishart distribution when given degrees of freedom and
+ * a sigma matrix.
+ * @param df The degrees of freedom of the Wishart.  (> 0)
+ * @param S  Sigma, the covariance matrix, with dimensions m x m.
+ * @return A matrix that is a Wishart distribution, aka the sample covariance
+ *         matrix of a Multivariate Normal Distribution
+ * @sa riwishart
+ * @author James J Balamuta
+ * @code
+ * // Call with the following data:
+ * vec A = {1, 2};
+ * mat B = diagmat(A);
+ * mat C = riwishart(3, B);
+ * @endcode
+ */
 inline arma::mat rwishart(unsigned int df, const arma::mat& S){
     // Dimension of returned wishart
     unsigned int m = S.n_rows;

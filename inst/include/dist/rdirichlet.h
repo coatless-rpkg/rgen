@@ -3,12 +3,15 @@
 
 #include <RcppArmadillo.h>
 
-// @title Generate Dirichlet Random Variable
-// @description Sample a Dirichlet random variable.
-// @usage rDirichlet(deltas)
-// @param deltas A \code{vector} of Dirichlet parameters.
-// @return A \code{vector} from a Dirichlet.
-// @author Steven Andrew Culpepper
+/**
+ * Generate Dirichlet Random Variable
+ *
+ * Sample from Dirichlet distribution.
+ *
+ * @param deltas A vector of Dirichlet parameters.
+ * @return A vector from a Dirichlet.
+ * @author Steven Andrew Culpepper
+ */
 inline arma::vec rdirichlet(const arma::vec& deltas){
     size_t C = deltas.n_elem;
     arma::vec Xgamma(C);
