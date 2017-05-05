@@ -33,7 +33,7 @@ inline arma::mat rmatnormal_chol(const arma::mat& mu,
 }
 
 // helper function
-inline arma::mat make_mat(const arma::mat& X){
+inline arma::mat make_mat(const arma::mat& X) {
     // Eigen values
     arma::vec eigval;
     arma::mat eigvec;
@@ -53,6 +53,18 @@ inline arma::mat rmatnormal_eigen(const arma::mat& mu,
 
     // N x P + N x N * N x P * P x P
     return mu + make_mat(Sigma_row) * X * make_mat(Sigma_col);
+}
+
+inline arma::rmatnormal(const arma::mat& mu,
+                        const arma::mat& Sigma_row,
+                        const arma::mat& Sigma_col,
+                        std::string method = "chol") {
+
+    if(method == "chol") {
+        return rmatnormal_chol(mu, Sigma_row, Sigma_col);
+    }
+
+    return rmatnormal_eigen(mu, Sigma_row, Sigma_col);
 }
 
 
