@@ -4,8 +4,16 @@
 \name{rgen-package}
 \alias{rgen}
 \alias{rgen-package}
-\title{Random Sampling Distribution C++ Routines}
+\title{rgen: Random Sampling Distribution C++ Routines for Armadillo}
 \description{
 Provides C++ armadillo headers for popular sampling distributions
 }
+\author{
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
 
+Other contributors:
+\itemize{
+  \item Steven Culpepper \email{sculpepp@illinois.edu} [contributor]
+}
+
+}
