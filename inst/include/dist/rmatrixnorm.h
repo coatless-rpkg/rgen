@@ -64,7 +64,7 @@ inline arma::mat rmatnormal_eigen(const arma::mat& mu,
  * cholesky decomposition and the second is to use a symmetric eigen
  * decomposition
  */
-inline arma::rmatnormal(const arma::mat& mu,
+inline arma::mat rmatnormal(const arma::mat& mu,
                         const arma::mat& Sigma_row,
                         const arma::mat& Sigma_col,
                         std::string method = "chol") {
