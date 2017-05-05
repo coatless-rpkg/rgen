@@ -12,7 +12,7 @@ inline arma::mat rmatnormal_chol(const arma::mat& mu,
     X.imbue(norm_rand); // Use R's PNG seed instead of Armadillo
 
     // N x P + N x N * N x P * P x P
-    return mu + arma::chol(Sigma_row) * X * arma::chol(Sigma_col);
+    return mu + arma::chol(Sigma_row, "lower") * X * arma::chol(Sigma_col);
 }
 
 // helper function
