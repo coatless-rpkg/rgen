@@ -5,7 +5,7 @@ Authors@R: c(person("James", "Balamuta", email = "balamut2@illinois.edu", role =
              person("Steven", "Culpepper", email = "sculpepp@illinois.edu", role = c("ctb")))
 Description: Provides C++ armadillo headers for popular sampling distributions.
 Depends:
-    R (>= 3.4.0)
+    R (>= 3.3.3)
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
