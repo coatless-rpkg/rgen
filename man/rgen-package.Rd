@@ -4,9 +4,9 @@
 \name{rgen-package}
 \alias{rgen}
 \alias{rgen-package}
-\title{rgen: Random Sampling Distribution C++ Routines for Armadillo}
+\title{This package provides header-only sampling routines.}
 \description{
-Provides C++ armadillo headers for popular sampling distributions.
+This package provides header-only sampling routines.
 }
 \author{
 \strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}

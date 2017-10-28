@@ -119,7 +119,4 @@ To use `C++11`, you **may** wish to add the following
 to your `src/Makevars` and `src/Makevars.win` file:
 
     CXX_STD = CXX11
-
-
-
-
+    

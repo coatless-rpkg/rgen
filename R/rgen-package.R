@@ -1,3 +1,2 @@
-#' @useDynLib rgen
-#' @importFrom Rcpp sourceCpp
+#' This package provides header-only sampling routines.
 "_PACKAGE"
