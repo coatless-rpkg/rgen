@@ -1,43 +1,23 @@
 ---
-output: github_document
+title: "Using the rgen Samplers"
+author: "James Balamuta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the rgen Samplers}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+The purpose of the `rgen` package is to provide popular sampling distributions
+that are not exported by [_R_'s Math API](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Numerical-analysis-subroutines) or
+available in [_C++11_ and onwards](http://en.cppreference.com/w/cpp/numeric/random).
+These samplers are written using [armadillo](http://arma.sourceforge.net/docs.html).
+Please note, these samplers, just like the ones in [armadillo](http://arma.sourceforge.net/docs.html)
+**cannot** be used in parallelized code as the underlying generation routines
+rely upon _R_ calls that are single-threaded.
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
-[![Build Status](https://travis-ci.org/coatless/rgen.svg)](https://travis-ci.org/coatless/rgen) [![Downloads](http://cranlogs.r-pkg.org/badges/rgen?color=brightgreen)](http://www.r-pkg.org/pkg/rgen) [![CRAN](http://www.r-pkg.org/badges/version/rgen)](https://cran.r-project.org/package=rgen) [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
-
-# `rgen` - C++ Headers for Sampling Distributions
-
-The repository houses random distribution sampling routines based in [`armadillo`](https://github.com/conradsnicta/armadillo-code).
-These routines connect into *R*'s seed generator using
-[`RcppArmadillo`](https://github.com/RcppCore/RcppArmadillo). This package
-was spun off from the [`r-to-armadillo`](https://github.com/coatless/r-to-armadillo)
-project as it contained more direct references to internal _R_ seeds.
-
-## Supported Distributions
-
-Presently, `rgen` provides random sample functionality from:
-
-- [dirichlet](https://en.wikipedia.org/wiki/Dirichlet_distribution)
-- [multinomial](https://en.wikipedia.org/wiki/Multinomial_distribution)
-- [wishart](https://en.wikipedia.org/wiki/Wishart_distribution)
-- [inverse wishart](https://en.wikipedia.org/wiki/Inverse-Wishart_distribution)
-- [multivariate normal](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)
-- [matrix normal](https://en.wikipedia.org/wiki/Matrix_normal_distribution)
-
-Most notably, this is a header-only collection of functions. Therefore, this 
-package can be linked to a pre-existing package instead of having to copy
-and paste the header files directly into your project's source.
-
-
+## Installation of `rgen`
 
 `rgen` is available on CRAN and GitHub.
 
