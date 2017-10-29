@@ -6,7 +6,7 @@ Authors@R: c(person("James", "Balamuta", email = "balamut2@illinois.edu", role =
 Description: Provides popular sampling distributions C++ routines based in 
     armadillo through a header file approach.
 Depends:
-    R (>= 3.3.3)
+    R (>= 3.3.0)
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true

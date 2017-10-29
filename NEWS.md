@@ -1,4 +1,4 @@
-# rgen 0.0.0.9000
+# rgen 0.0.1
 
 - Sampling distribution routines governing:
     - rdirichlet
@@ -6,7 +6,6 @@
     - rwishart
     - rmatnormal_chol / rmatnormal_eigen
     - rmultinomial
-- Rcpp plugin to allow for standalone scripts
-- README file containing:
+- README and Vignette files that contain:
     - installation instructions
     - examples for use in standalone scripts and packages
