@@ -6,14 +6,23 @@
 \alias{rgen-package}
 \title{This package provides header-only sampling routines.}
 \description{
-This package provides header-only sampling routines.
+Provides popular sampling distributions C++ routines based in armadillo through a header file approach.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/coatless-rpkg/rgen}
+  \item \url{https://r-pkg.thecoatlessprofessor.com/rgen/}
+  \item Report bugs at \url{https://github.com/coatless-rpkg/rgen/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 Other contributors:
 \itemize{
-  \item Steven Culpepper \email{sculpepp@illinois.edu} [contributor]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (\href{https://orcid.org/0000-0003-4226-6176}{ORCID}) [contributor]
 }
 
 }

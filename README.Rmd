@@ -12,14 +12,17 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://travis-ci.org/coatless/rgen.svg)](https://travis-ci.org/coatless/rgen) [![Downloads](http://cranlogs.r-pkg.org/badges/rgen?color=brightgreen)](http://www.r-pkg.org/pkg/rgen) [![CRAN](http://www.r-pkg.org/badges/version/rgen)](https://cran.r-project.org/package=rgen) [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/coatless-rpkg/rgen/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/rgen/actions/workflows/R-CMD-check.yaml)
+[![Downloads](https://cranlogs.r-pkg.org/badges/rgen?color=brightgreen)](https://www.r-pkg.org/pkg/rgen) [![CRAN](http://www.r-pkg.org/badges/version/rgen)](https://cran.r-project.org/package=rgen) [![License](https://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-2.0.html)
+<!-- badges: end -->
 
 # `rgen` - C++ Headers for Sampling Distributions
 
 The repository houses random distribution sampling routines based in [`armadillo`](https://github.com/conradsnicta/armadillo-code).
 These routines connect into *R*'s seed generator using
 [`RcppArmadillo`](https://github.com/RcppCore/RcppArmadillo). This package
-was spun off from the [`r-to-armadillo`](https://github.com/coatless/r-to-armadillo)
+was spun off from the [`r-to-armadillo`](https://github.com/coatless-rpkg/r-to-armadillo)
 project as it contained more direct references to internal _R_ seeds.
 
 ## Supported Distributions
@@ -36,8 +39,6 @@ Presently, `rgen` provides random sample functionality from:
 Most notably, this is a header-only collection of functions. Therefore, this 
 package can be linked to a pre-existing package instead of having to copy
 and paste the header files directly into your project's source.
-
-
 
 `rgen` is available on CRAN and GitHub.
 
@@ -57,9 +58,8 @@ install.packages("rgen")
 or from GitHub by:
 
 ```r
-# install.packages("devtools")
-
-devtools::install_github("coatless/rgen")
+install.packages("remotes")
+remotes::install_github("coatless-rpkg/rgen")
 ```
 
 ## Using `rgen`
@@ -116,12 +116,8 @@ riwishart(3, diag(2))
 
 To use `rgen` in your R package, modify the `DESCRIPTION` file by adding:
 
-    LinkingTo: Rcpp, RcppArmadillo, rgen
-    Imports:
-        Rcpp (>= 0.12.10)
-
-To use `C++11`, you **may** wish to add the following 
-to your `src/Makevars` and `src/Makevars.win` file:
-
-    CXX_STD = CXX11
-    
+```
+LinkingTo: Rcpp, RcppArmadillo, rgen
+Imports:
+    Rcpp
+```
